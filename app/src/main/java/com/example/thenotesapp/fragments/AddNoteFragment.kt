@@ -13,8 +13,8 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.findNavController
-import com.example.notesroompractice.R
-import com.example.notesroompractice.databinding.FragmentAddNoteBinding
+import com.example.thenotesapp.R
+import com.example.thenotesapp.databinding.FragmentAddNoteBinding
 import com.example.thenotesapp.MainActivity
 import com.example.thenotesapp.model.Note
 import com.example.thenotesapp.viewModel.NoteViewModel

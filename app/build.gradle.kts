@@ -3,21 +3,22 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("kotlin-parcelize")
-    id("com.google.devtools.ksp")
-    id("androidx.navigation.safeargs")
+    id("androidx.navigation.safeargs.kotlin") // Correct Safe Args plugin for Kotlin
 }
 
 android {
-    namespace = "com.example.notesroompractice"
+    namespace = "com.example.thenotesapp"
     compileSdk = 34
+
     defaultConfig {
-        applicationId = "com.example.notesroompractice"
+        applicationId = "com.example.thenotesapp"
         minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -27,14 +28,17 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures{
+
+    buildFeatures {
         dataBinding = true
     }
 }
@@ -62,12 +66,9 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 
-    // Life Cycle Arch
+    // Lifecycle Arch
     val lifecycleVersion = "2.6.2"
-    // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
-    // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
-    // Annotation processor
     kapt("androidx.lifecycle:lifecycle-compiler:$lifecycleVersion")
 }

@@ -14,8 +14,8 @@ import androidx.core.view.MenuProvider
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.notesroompractice.R
-import com.example.notesroompractice.databinding.FragmentHomeBinding
+import com.example.thenotesapp.R
+import com.example.thenotesapp.databinding.FragmentHomeBinding
 import com.example.thenotesapp.MainActivity
 import com.example.thenotesapp.adapter.NoteAdapter
 import com.example.thenotesapp.model.Note
