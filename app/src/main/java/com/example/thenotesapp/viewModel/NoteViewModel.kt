@@ -1,14 +1,17 @@
+// NoteViewModel.kt
 package com.example.thenotesapp.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import androidx.room.Query
 import com.example.thenotesapp.model.Note
 import com.example.thenotesapp.repository.NoteRepository
 import kotlinx.coroutines.launch
 
-class NoteViewModel(app: Application, private val noteRepository: NoteRepository): AndroidViewModel(app) {
+class NoteViewModel(application: Application, private val noteRepository: NoteRepository) : AndroidViewModel(application) {
+
+    val allNotes: LiveData<List<Note>> = noteRepository.getAllNotes()
 
     fun addNote(note: Note) =
         viewModelScope.launch {
@@ -25,8 +28,7 @@ class NoteViewModel(app: Application, private val noteRepository: NoteRepository
             noteRepository.deleteNote(note)
         }
 
-    fun getAllNotes() = noteRepository.getAllNotes()
-
-    fun searchNote(query: String?) =
-        noteRepository.searchNote(query)
+    fun searchNote(query: String): LiveData<List<Note>> {
+        return noteRepository.searchNote(query)
+    }
 }
