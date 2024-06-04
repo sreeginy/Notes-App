@@ -12,8 +12,12 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-
     </style>
 
     <style name="Theme.TheNotesApp" parent="Base.Theme.TheNotesApp" />
+
+    <!-- Splash Screen Theme -->
+    <style name="Theme.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+    </style>
 </resources>
